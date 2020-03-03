@@ -1,0 +1,81 @@
+{% load static %}
+{% block leftsidebar %}
+
+<style>
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+
+    .btn3d {
+        transition: all .08s linear;
+        position: relative;
+        outline: medium none;
+        -moz-outline-style: none;
+        border: 0px;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+
+    .btn3d:focus {
+        outline: medium none;
+        -moz-outline-style: none;
+    }
+
+    .btn3d:active {
+        top: 9px;
+    }
+
+    .btn-success {
+        box-shadow: 0 0 0 1px #5cb85c inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4cae4c, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+        background-color: #5cb85c;
+    }
+
+    .btn-default {
+        box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #adadad, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+    }
+
+    .btn-danger {
+        box-shadow: 0 0 0 1px #c63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #C24032, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+        background-color: #c63702;
+    }
+</style>
+
+<!-- Sidebar Widgets Column -->
+
+<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 rounded">
+    <div class="my-4 left">
+        <h5 class="text-center font-weight-bold bg-info p-3 rounded">Python Tutorial</h5>
+        <br>
+        <span id="python" class="font-weight-bold"><span>Python introduction</span><span
+                class="text-danger text-right ml-5">Click</span></span>
+        
+
+            <div id="pythont">
+                {% for i in pythonpost %}
+                <ul class="mt-3"><a href="/blog/{{i.slug}}">
+                        {{i}}
+                    </a>
+                    <hr>
+                </ul>
+
+                {% endfor %}
+           
+            <span class="font-weight-bold text-right">Django</span>
+                {% for i in djangopost %}
+                <ul class="mt-3"><a href="/blog/{{i.slug}}">
+                        {{i}}
+                    </a>
+                    <hr>
+                </ul>
+
+                {% endfor %}
+            </div>
+       
+
+    </div>
+
+
+</div>
+
+{% endblock leftsidebar %}

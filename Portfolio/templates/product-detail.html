@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Python Tutorial - Python Programming</title>
+
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+
+<div class="container-fluid mt-5">
+    <div class="row mb-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="col-xl-12" id="header-image">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center text-md-right mt-5">
+                    <img src="{% static 'myapp/images/python.png' %}" alt="Python" class="img-fluid text-right"
+                        style="width: 150px;">
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 text-center text-md-left mt-5">
+                    <h1 class="font-weight-bold text-danger mt-5">Python Tutorial for Beginner</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <h1 class="text-center font-weight-bold mt-5">Best DSLR Camera</h1>
+            <p class="text-center mb-5">Python programming is best platform for Python learning.If we want to learn with
+                fun then this is best place for you.</p>
+        </div>
+
+
+        <div class="col-xl-4 offset-xl-2 col-lg-4 col-md-6 text-center">
+            <center>
+                <img class="img-fluid" src="{{p.pimage.url}}" alt="Card image cap" width="500px;" height="500px;">
+            </center>
+            <br>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 text-center">
+            <br>
+
+            <center>
+                <br>
+                <br>
+                <h3 class="card-title font-weight-bold">{{p.pname}}</h3>
+                <br>
+                <br>
+                <br>
+                <div class="card-title font-weight-bold">Product M.R.P:-
+
+                    <span style="text-decoration: line-through; font-size: 30px;">
+                        <strong class="text-danger">₹ {{p.pmrp}}</strong>
+                    </span>
+
+                </div>
+                <div class="card-title font-weight-bold">Product Price:-
+
+                    <span style="font-size: 30px;">
+                        <strong class="text-danger">₹ {{p.pprice}}</strong>
+                    </span>
+
+                </div>
+                <div class="card-title font-weight-bold">You Save:-
+
+                    <span style="font-size: 30px;">
+                        <strong class="text-danger">₹ {{p.yousave}}</strong>
+                    </span>
+
+                </div>
+
+                
+
+
+            </center>
+            <br>
+        </div>
+        <div class="col-xl-12 col-lg-4 col-md-6 text-center">
+            <center>
+                <p class="card-text">{{p.pspecification | safe}}</p>
+
+            </center>
+            <br>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}

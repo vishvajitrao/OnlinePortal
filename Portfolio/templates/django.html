@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Python Tutorial - Python Programming</title>
+
+{% endblock %}
+
+
+
+{% block content %}
+<br>
+<br>
+
+<div class="container-fluid mt-5">
+    <div class="row mb-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="col-xl-12" id="header-image">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center text-md-right mt-3">
+                    <img src="{% static 'myapp/images/django.png' %}" alt="Python" class="img-fluid text-right"
+                        style="width: 200px;">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center text-md-left mt-5">
+                    <h1 class="font-weight-bold text-danger mt-5">Tutorial for Beginner</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <h1 class="text-center font-weight-bold mt-5">Django Index</h1>
+            <p class="text-center mb-5">Python programming is best platform for Python learning.If we want to learn with
+                fun then this is best place for you.</p>
+        </div>
+        {% for p in djangotopic %}
+        <div class="col-xl-4">          
+            <p class="text-center"><i class="fab fa-python"></i> <a href="/blog/{{p.slug}}"
+                    class="text-center">{{p}}</a></p>
+            <hr>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock content %}

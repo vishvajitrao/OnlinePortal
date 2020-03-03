@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>{{blog.title}} - Python Programming</title>
+{% endblock title %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+
+<div class="container shadow-none p-3 mb-5 rounded mt-3" id="Blog">
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1">
+
+      <h1 class="text-center">Django Latest Blog</h1>
+      <hr>
+      <h6 class="text-center text-danger">Best learning platform for you</h6>
+
+
+    </div>
+  </div>
+
+
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    {% block leftsidebar %}
+    {% include 'leftsidebar.html' %}
+    {% endblock leftsidebar %}
+
+    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 mt-3">
+      {% if blog.Category %}
+      <span><a href="/blog">Blog Home</a> » </span><span><a
+          href="/{{blog.Category | lower }}-tutorial">{{blog.Category}}</a> »
+      </span><span>{{blog.title}}</span>
+      {% endif %}
+      <div class="card-body">
+        <h1 class="mb-5 text-center">{{ blog.title }}</h1>
+        <div class="text-center"><img src="{{blog.image.url}}" alt="" class="img-fluid"></div>
+        <br>
+        <br>
+        <p class=" text-muted text-center"><b>{{ blog.author }} </b>| {{ blog.created_on }}</p>
+        <p class="card-text img-fluid plaintext">{{ blog.content | safe}}</p>
+
+      </div>
+      <i class="fas fa-tags"></i><b>Tags: </b>{% for tag in tags %} <a href="{% url 'tagged' tag.slug %}"><b
+          class="badge badge-success">{{tag}} </b></a>
+      {% endfor %}
+      <div class="sharethis-inline-share-buttons mt-2"></div>
+
+    </div>
+    <div class="col-sm-12">
+      <h1 class="text-center mt-5 font-weight-bold">Related Post</h1>
+    </div>
+    {% for post in posts %}
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 text-center mt-5">
+
+      <a href=""><img src="{{post.image.url }}" class="text-center mb-3 img-thumbnail rounded"
+          style="height: 250px;"></a>
+
+      <h4 class="card-title font-weight-bold" id="blog-list"><a href="{% url 'PostDetail' post.slug %}"
+          style="color: #3676AB;">{{post.title}}</a>
+      </h4>
+
+
+    </div>
+
+    {% endfor %}
+
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-3">
+    <div class="card col-xl-10 offset-xl-1">
+      <div class="card-header">
+        <h3> About: <b class="text-success">{{blog.author}}</b></h3>
+        <p>{{blog.created_on}}</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <span>
+            <img src="{% static 'myapp/images/python.png' %}" alt=""
+              class="rounded-circle img-fluid mt-3 mb-3 border border-success" style="width: 100px;">
+          </span>
+        </div>
+        <div class="col-sm-9 mt-5">
+          <span>
+
+            In this step-by-step tutorial,
+            you'll see common examples of invalid syntax in Python and learn how to resolve the issue
+
+
+          </span>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-xl-10 offset-xl-1">
+      <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://pythonprogramming-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row mt-3">
+    <div class="card col-xl-8 m-1">
+
+
+      {% for comment in comments %}
+      <img src="{% static 'myapp/images/python.png' %}" alt=""
+        class="rounded-circle img-fluid mt-3 mb-3 border border-success" style="width: 50px;">
+      <div class="comments" style="padding: 10px;">
+        <p class="font-weight-bold">
+          <a href="{{comment.website}}" class="text-danger"> {{ comment.name }}</a>
+          <span class=" text-muted font-weight-normal">
+            {{ comment.created_on }}
+          </span>
+        </p>
+        {{ comment.body | linebreaks }}
+      </div>
+      {% endfor %}
+
+
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="card col-xl-8 m-1">
+      <div class="card-header">
+        <h3><b class="text-success">Comment Now</b></h3>
+        <p></p>
+      </div>
+
+      <form action="" method="post">
+        {% csrf_token %}
+        {{comment_form | crispy}}
+        <input type="submit" value="Comment" class="btn btn-danger" style="margin-bottom:20px;">
+      </form>
+
+
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+{% endblock %}

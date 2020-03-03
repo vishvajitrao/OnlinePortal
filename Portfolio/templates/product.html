@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Python Tutorial - Python Programming</title>
+
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+
+<div class="container-fluid mt-5">
+    <div class="row mb-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="col-xl-12" id="header-image">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center text-md-right mt-5">
+                    <img src="{% static 'myapp/images/python.png' %}" alt="Python" class="img-fluid text-right"
+                        style="width: 150px;">
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 text-center text-md-left mt-5">
+                    <h1 class="font-weight-bold text-danger mt-5">Python Tutorial for Beginner</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <h1 class="text-center font-weight-bold mt-5">Python Index</h1>
+            <p class="text-center mb-5">Python programming is best platform for Python learning.If we want to learn with
+                fun then this is best place for you.</p>
+        </div>
+        
+        {% for p in product %}
+        <div class="col-xl-3 col-lg-4 col-md-6 text-center">     
+            <center>    
+            <div class="card img-thumbnail border border-danger rounded" style="width: 500px; height: 550px;" >
+                <img class="card-img-top" src="{{p.pimage.url}}" alt="Card image cap" width="200px;" height="300px;">
+                
+                <div class="card-body">
+                    <a href="{{p.pslug}}" target="_blank" rel="noopener noreferrer"><h6 class="card-title card-header">{{p.pname}}</h6></a>
+                    <h6 class="card-title text-info font-weight-bold">Price:- {{p.pprice}}</h6>
+                    <!-- <p class="card-text">{{p.pspecification}}</p> -->
+                    <a href="{{p.pslug}}" class="btn btn-primary">Show Details</a>
+                  </div>
+
+
+              </div>
+            </center> 
+         <br>
+        </div>
+        {% endfor %}
+        {% for p in product %}
+        <div class="col-xl-3 col-lg-4 col-md-6 text-center">     
+            <center>    
+            <div class="card img-thumbnail border border-danger rounded" style="width: 500px; height: 550px;" >
+                <img class="card-img-top" src="{{p.pimage.url}}" alt="Card image cap" width="200px;" height="300px;">
+                
+                <div class="card-body">
+                    <a href="{{p.pslug}}" target="_blank" rel="noopener noreferrer"><h6 class="card-title card-header">{{p.pname}}</h6></a>
+                    <h6 class="card-title text-info font-weight-bold">Price:- {{p.pprice}}</h6>
+                    <!-- <p class="card-text">{{p.pspecification}}</p> -->
+                    <a href="{{p.pslug}}" class="btn btn-primary">Show Details</a>
+                  </div>
+
+
+              </div>
+            </center> 
+         <br>
+        </div>
+        {% endfor %}
+        {% for p in product %}
+        <div class="col-xl-3 col-lg-4 col-md-6 text-center">     
+            <center>    
+            <div class="card img-thumbnail border border-danger rounded" style="width: 500px; height: 550px;" >
+                <img class="card-img-top" src="{{p.pimage.url}}" alt="Card image cap" width="200px;" height="300px;">
+                
+                <div class="card-body">
+                    <a href="{{p.pslug}}" target="_blank" rel="noopener noreferrer"><h6 class="card-title card-header">{{p.pname}}</h6></a>
+                    <h6 class="card-title text-info font-weight-bold">Price:- {{p.pprice}}</h6>
+                    <!-- <p class="card-text">{{p.pspecification}}</p> -->
+                    <a href="{{p.pslug}}" class="btn btn-primary">Show Details</a>
+                  </div>
+
+
+              </div>
+            </center> 
+         <br>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}

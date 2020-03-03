@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Python Tutorial - Python Programming</title>
+
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+
+<div class="container-fluid mt-5">
+    <div class="row mb-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="col-xl-12" id="header-image">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center text-md-right mt-5">
+                    <img src="{% static 'myapp/images/python.png' %}" alt="Python" class="img-fluid text-right"
+                        style="width: 150px;">
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 text-center text-md-left mt-5">
+                    <h1 class="font-weight-bold text-danger mt-5">Python Tutorial for Beginner</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <h1 class="text-center font-weight-bold mt-5">Python Index</h1>
+            <p class="text-center mb-5">Python programming is best platform for Python learning.If we want to learn with
+                fun then this is best place for you.</p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <h2 class="text-center">Beginner Tutorial</h2>
+            <p class="text-center mb-5">Python start from scratch - </p>
+            {% for p in pythontopic %}
+            <p class="text-center"><i class="fab fa-python"></i> <a href="/blog/{{p.slug}}"
+                    class="text-center">{{p}}</a></p>
+            <hr>
+            {% endfor %}
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <h2 class="text-center">Python Built-in Module</h2>
+            <p class="text-center mb-5">Python built-in modules - </p>
+            {% for p in pythontopic %}
+            <p class="text-center"><i class="fab fa-python"></i> <a href="/blog/{{p.slug}}"
+                    class="text-center">{{p}}</a></p>
+            <hr>
+            {% endfor %}
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <h2 class="text-center">Python External Module</h2>
+            <p class="text-center mb-5">Python external modules - </p>
+            {% for p in pythontopic %}
+            <p class="text-center"><i class="fab fa-python"></i> <a href="/blog/{{p.slug}}"
+                    class="text-center">{{p}}</a></p>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}

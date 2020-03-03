@@ -1,0 +1,271 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <script type="text/javascript"
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=5de74b3e2e4c07001211b691&product=inline-share-buttons"
+    async="async"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% for seo in seo %}
+  <meta name="title" content="{{seo.title}}">
+<meta name="description" content="{{seo.description}}">
+<meta name="keywords" content="{{seo.keyword}}">
+<meta name="robots" content="{{seo.robotindex}}, {{seo.robotfollow}}">
+<meta http-equiv="Content-Type" content="{{seo.contenttype}}">
+<meta name="language" content="{{seo.language}}">
+<meta content="{{seo.author}}" name='Author'/>
+{% endfor %}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+    integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static 'myapp/images/favicon.ico' %}" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+  {% block title %}
+
+
+  {% endblock title %}
+  <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'myapp/css/animate.css' %}">
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</head>
+
+<body ata-spy="scroll" data-target=".navbar" data-offset="50">
+
+
+
+  <!-- Menu -->
+
+
+  <nav class="navbar fixed-top navbar-expand-lg shadow navbar-light bg-dark font-weight-bold">
+    <a class="navbar-brand" href="/"><h2 class="ml-5 font-weight-bold text-info">Online Learning Platform</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto" id="navbar">
+        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/blog">About</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            Tutorials
+          </a>
+          <div class="dropdown-menu bg-dark p-2 text-center" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'TutorialPage' %}">Python Tutorial</a>
+            
+            <a class="dropdown-item" href="{% url 'DjangoPage' %}">Django Example</a>
+            <a class="dropdown-item" href="{% url 'TutorialPage' %}">Data Science</a>
+            <a class="dropdown-item" href="{% url 'TutorialPage' %}">Machine Learning</a>
+
+          </div>
+        </li>
+
+        <a class="nav-item nav-link" href="/blog">Blog</a>
+        <!-- <a class="nav-item nav-link" href="/carrer">Carrer</a> -->
+
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <!-- close menu -->
+
+
+  {% block content %}
+
+
+  {% endblock %}
+  <!-- Scolling -->
+
+
+  <!-- Footer -->
+  <footer class="page-footer font-small unique-color-dark">
+
+    <div style="background-color: #6351ce;">
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">Company name</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>{{about.about}}</p>
+
+          <a class="navbar-brand mt-5 ml-5" href="/"><img class="img-fluid"
+              src="{% static 'myapp/images/android.png' %}" alt="" style="width: 70px;"></a>
+
+          <a class="navbar-brand mt-5" href="/"><img class="img-fluid" src="{% static 'myapp/images/android.png' %}"
+              alt="" style="width: 70px;"></a>
+
+        </div>
+        <!-- Grid column --
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Pages</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          {% for page in pages %}
+          <p>
+            <a href="/page/{{page.slug}}">{{page.title}}</a>
+          </p>
+
+          {% endfor %}
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Tutorials</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="/python-tutorial">Python</a>
+          </p>
+          <p>
+            <a href="/python-tutorial">Python built-in module</a>
+          </p>
+          <p>
+            <a href="/python-tutorial">Python external module</a>
+          </p>
+          <p>
+            <a href="/django-tutorial">Django</a>
+          </p>
+          <p>
+            <a href="/python-examples">Python programs</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> India, Noida Sector-63</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="margin-bottom: -10px;">{{footer.text}}
+      <a href="/"> {{footerlink.textlink}}</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!--close  Footer -->
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src="{% static 'myapp/js/custom.js' %}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+#navbar a{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+#navbar a:hover{
+    color: blue;
+    
+}
+
+body {
+    position: relative;
+}
+
+#service {
+    padding-top: 80px;
+}
+
+#hirenow {
+    padding-top: 100px;
+    box-shadow: 10px 10px 5px grey;
+}
+#portfolio {
+    padding-top: 100px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.Dashboard {
+    margin-top: 20px;
+} 
+

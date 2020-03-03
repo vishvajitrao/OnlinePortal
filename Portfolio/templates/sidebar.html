@@ -1,0 +1,79 @@
+{% load static %}
+{% block sidebar %}
+
+<style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
+ .btn3d {
+    transition:all .08s linear;
+    position:relative;
+    outline:medium none;
+    -moz-outline-style:none;
+    border:0px;
+    margin-right:10px;
+    margin-top:15px;
+}
+.btn3d:focus {
+    outline:medium none;
+    -moz-outline-style:none;
+}
+.btn3d:active {
+    top:9px;
+}
+
+.btn-success {
+    box-shadow:0 0 0 1px #5cb85c inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4cae4c, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#5cb85c;
+}
+
+.btn-default {
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #adadad, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#fff;
+}
+
+.btn-danger {
+    box-shadow:0 0 0 1px #c63702 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #C24032, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#c63702;
+}
+       
+</style> 
+
+<!-- Sidebar Widgets Column -->
+
+<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 float-right ">
+<div class="card my-4 left">
+        <h5 class="card-header text-center">About Us</h5>
+    <div class="card-body">
+        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
+        <a href="#" class="btn btn-info">Know more!</a>
+    </div>
+</div>
+
+<div class="card my-4 left">
+    <h1 class="card-header text-center font-weight-bold">Topics</h1>
+<div class="card-body">
+    {% for tag in tags %}
+
+    <a href="{% url 'tagged' tag.slug %}" class="badge badge-pill badge-success">
+        {{tag}} </a>
+
+    {% endfor %}
+    
+</div>
+</div>
+
+<div class="my-4 left">
+       
+    <div class="card-body text-center">
+        
+        <img src="{% static 'myapp/images/ads/300x250.jpg' %}" alt="" class="img-fluid">
+            
+    </div>
+</div>
+
+
+</div>
+
+{% endblock sidebar %}

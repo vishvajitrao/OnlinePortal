@@ -1,0 +1,160 @@
+/* Navigation menu  */
+
+.navbar {
+  padding: 0px !important;
+  border-top: 5px solid green;
+}
+.dropdown-menu {
+  padding: 0px !important;
+  margin: 0px;
+  
+}
+
+#navbar a{
+    color: white;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 20px 5px;
+    margin-right: 55px;
+    
+   
+}
+
+#navbar a:hover{
+    color: white;
+    background-color: green; 
+   
+
+}
+
+
+
+/* close navigation menu */
+
+
+body {
+    position: relative;
+}
+
+#service {
+    padding-top: 30px;
+}
+
+#hirenow {
+    padding-top: 100px;
+    box-shadow: 10px 10px 5px grey;
+}
+#portfolio {
+    padding-top: 100px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+
+#Blog {
+    background-color:#51188F;
+    
+    color: rosybrown;
+    margin-top: 400px;
+}
+
+
+#latestpost {
+    background-color: white;
+}
+
+#latestposts {
+    background-color: red;
+}
+
+
+i {
+  color: blue;
+  
+}
+
+i:hover {
+cursor: pointer;
+  
+}
+
+
+
+/* Scrolling */
+
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Blog section */
+
+
+#blog-list a:hover{
+text-decoration: underline;
+}
+
+
+
+/* Header image */
+
+
+#header-image
+{
+  background: url('../images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: -25px;
+}
+
+
+span:hover {
+cursor: pointer;
+}
+
+
+#Dashboard {
+  margin-top: 100px;
+}
+
+.mt-10 {
+  margin-top: 80px;
+}
+
+
+
+.body {
+  margin:  0px;
+  padding: 0px;
+}

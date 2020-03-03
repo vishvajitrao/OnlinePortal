@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title> Python Programming</title>
+{% endblock title %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+
+<div class="container shadow-none p-3 mb-5 rounded mt-3" id="Blog">
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1">
+
+            <h1 class="text-center">Django Latest Blog</h1>
+            <hr>
+            <h6 class="text-center text-danger">Best learning platform for you</h6>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12 text-center mb-5"><h3>Post related to "{{slug}}"</h3></div>
+            {% for post in tagposts %}
+            <div class="col-xl-4 text-center">
+    
+                <a href=""><img src="{{post.image.url }}" class="text-center mb-3 img-fluid rounded"></a>
+    
+                <h3 class="card-title" id="blog-list"><a href="{% url 'PostDetail' post.slug %}"
+                        style="color: #3676AB;">{{post.title}}</a>
+                </h3>
+    
+                <p class="card-text text-black"><b style="color: #BE0B85;"><i class="fas fa-user"></i> {{ post.author}}
+                    </b>| <b><i class="far fa-clock"></i></b> {{ post.created_on | date:"SHORT_DATE_FORMAT"}}  </p>
+                <br>
+                <br>
+    
+            </div>
+    
+            {% endfor %}
+
+            <div class="col-xl-4 text-center">
+    
+                <img src="{% static 'myapp/images/ads/300x600.jpg' %}" alt="" class="img-fluid">
+    
+            </div>
+
+            <div class="col-xl-12 text-center mb-5"><a href="/blog" class="btn btn-success">Go Back</a></h3></div>
+            
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
